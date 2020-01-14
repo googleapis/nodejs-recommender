@@ -35,7 +35,10 @@ async function main(
     const [recommendations] = await recommender.listRecommendations({
       parent: recommender.recommenderPath(project, 'global', recommenderId),
     });
-    console.info(recommendations);
+    console.info(`recommendations for ${recommenderId}:`);
+    for (const recommendation of recommendations) {
+      console.info(recommendation);
+    }
     return recommendations;
   }
   const recommendations = await listRecommendations();
