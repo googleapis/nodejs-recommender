@@ -22,5 +22,3 @@ export {v1, RecommenderClient};
 // For compatibility with JavaScript libraries we need to provide this default export:
 // tslint:disable-next-line no-default-export
 export default {v1, RecommenderClient};
-import * as protos from '../protos/protos';
-export {protos};
