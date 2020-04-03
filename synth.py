@@ -21,9 +21,6 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
-AUTOSYNTH_MULTIPLE_COMMITS = True
-
-
 # Run the gapic generator
 gapic = gcp.GAPICMicrogenerator()
 name = 'recommender'
