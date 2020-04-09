@@ -1,6 +1,13 @@
 {
-  "updateTime": "2020-04-03T12:03:39.993401Z",
+  "updateTime": "2020-04-09T13:11:59.705059Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/nodejs-recommender.git",
+        "sha": "d1608ef4d2642fd4f067f58eafb53c8998c7f1db"
+      }
+    },
     {
       "git": {
         "name": "googleapis",
