@@ -33,7 +33,7 @@ async function main(
     // recommenderId = 'google.compute.instance.MachineTypeRecommender';
 
     const [recommendations] = await recommender.listRecommendations({
-      parent: recommender.billingAccountLocationRecommenderPath(
+      parent: recommender.projectLocationRecommenderPath(
         project,
         'global',
         recommenderId
