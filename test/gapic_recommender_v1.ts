@@ -1490,8 +1490,1088 @@ describe('v1.RecommenderClient', () => {
   });
 
   describe('Path templates', () => {
-    describe('insight', () => {
-      const fakePath = '/rendered/path/insight';
+    describe('billingAccountLocationInsightType', () => {
+      const fakePath = '/rendered/path/billingAccountLocationInsightType';
+      const expectedParameters = {
+        billing_account: 'billingAccountValue',
+        location: 'locationValue',
+        insight_type: 'insightTypeValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.billingAccountLocationInsightTypePathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.billingAccountLocationInsightTypePathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('billingAccountLocationInsightTypePath', () => {
+        const result = client.billingAccountLocationInsightTypePath(
+          'billingAccountValue',
+          'locationValue',
+          'insightTypeValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates.billingAccountLocationInsightTypePathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchBillingAccountFromBillingAccountLocationInsightTypeName', () => {
+        const result = client.matchBillingAccountFromBillingAccountLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'billingAccountValue');
+        assert(
+          (client.pathTemplates.billingAccountLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromBillingAccountLocationInsightTypeName', () => {
+        const result = client.matchLocationFromBillingAccountLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates.billingAccountLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightTypeFromBillingAccountLocationInsightTypeName', () => {
+        const result = client.matchInsightTypeFromBillingAccountLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightTypeValue');
+        assert(
+          (client.pathTemplates.billingAccountLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('billingAccountLocationInsightTypeInsight', () => {
+      const fakePath =
+        '/rendered/path/billingAccountLocationInsightTypeInsight';
+      const expectedParameters = {
+        billing_account: 'billingAccountValue',
+        location: 'locationValue',
+        insight_type: 'insightTypeValue',
+        insight: 'insightValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.billingAccountLocationInsightTypeInsightPathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.billingAccountLocationInsightTypeInsightPathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('billingAccountLocationInsightTypeInsightPath', () => {
+        const result = client.billingAccountLocationInsightTypeInsightPath(
+          'billingAccountValue',
+          'locationValue',
+          'insightTypeValue',
+          'insightValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationInsightTypeInsightPathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchBillingAccountFromBillingAccountLocationInsightTypeInsightName', () => {
+        const result = client.matchBillingAccountFromBillingAccountLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'billingAccountValue');
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromBillingAccountLocationInsightTypeInsightName', () => {
+        const result = client.matchLocationFromBillingAccountLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightTypeFromBillingAccountLocationInsightTypeInsightName', () => {
+        const result = client.matchInsightTypeFromBillingAccountLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightTypeValue');
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightFromBillingAccountLocationInsightTypeInsightName', () => {
+        const result = client.matchInsightFromBillingAccountLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightValue');
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('billingAccountLocationRecommender', () => {
+      const fakePath = '/rendered/path/billingAccountLocationRecommender';
+      const expectedParameters = {
+        billing_account: 'billingAccountValue',
+        location: 'locationValue',
+        recommender: 'recommenderValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.billingAccountLocationRecommenderPathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.billingAccountLocationRecommenderPathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('billingAccountLocationRecommenderPath', () => {
+        const result = client.billingAccountLocationRecommenderPath(
+          'billingAccountValue',
+          'locationValue',
+          'recommenderValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates.billingAccountLocationRecommenderPathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchBillingAccountFromBillingAccountLocationRecommenderName', () => {
+        const result = client.matchBillingAccountFromBillingAccountLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'billingAccountValue');
+        assert(
+          (client.pathTemplates.billingAccountLocationRecommenderPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromBillingAccountLocationRecommenderName', () => {
+        const result = client.matchLocationFromBillingAccountLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates.billingAccountLocationRecommenderPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchRecommenderFromBillingAccountLocationRecommenderName', () => {
+        const result = client.matchRecommenderFromBillingAccountLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommenderValue');
+        assert(
+          (client.pathTemplates.billingAccountLocationRecommenderPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('billingAccountLocationRecommenderRecommendation', () => {
+      const fakePath =
+        '/rendered/path/billingAccountLocationRecommenderRecommendation';
+      const expectedParameters = {
+        billing_account: 'billingAccountValue',
+        location: 'locationValue',
+        recommender: 'recommenderValue',
+        recommendation: 'recommendationValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.billingAccountLocationRecommenderRecommendationPathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.billingAccountLocationRecommenderRecommendationPathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('billingAccountLocationRecommenderRecommendationPath', () => {
+        const result = client.billingAccountLocationRecommenderRecommendationPath(
+          'billingAccountValue',
+          'locationValue',
+          'recommenderValue',
+          'recommendationValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationRecommenderRecommendationPathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchBillingAccountFromBillingAccountLocationRecommenderRecommendationName', () => {
+        const result = client.matchBillingAccountFromBillingAccountLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'billingAccountValue');
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromBillingAccountLocationRecommenderRecommendationName', () => {
+        const result = client.matchLocationFromBillingAccountLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchRecommenderFromBillingAccountLocationRecommenderRecommendationName', () => {
+        const result = client.matchRecommenderFromBillingAccountLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommenderValue');
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchRecommendationFromBillingAccountLocationRecommenderRecommendationName', () => {
+        const result = client.matchRecommendationFromBillingAccountLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommendationValue');
+        assert(
+          (client.pathTemplates
+            .billingAccountLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('folderLocationInsightType', () => {
+      const fakePath = '/rendered/path/folderLocationInsightType';
+      const expectedParameters = {
+        folder: 'folderValue',
+        location: 'locationValue',
+        insight_type: 'insightTypeValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.folderLocationInsightTypePathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.folderLocationInsightTypePathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('folderLocationInsightTypePath', () => {
+        const result = client.folderLocationInsightTypePath(
+          'folderValue',
+          'locationValue',
+          'insightTypeValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates.folderLocationInsightTypePathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchFolderFromFolderLocationInsightTypeName', () => {
+        const result = client.matchFolderFromFolderLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'folderValue');
+        assert(
+          (client.pathTemplates.folderLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromFolderLocationInsightTypeName', () => {
+        const result = client.matchLocationFromFolderLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates.folderLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightTypeFromFolderLocationInsightTypeName', () => {
+        const result = client.matchInsightTypeFromFolderLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightTypeValue');
+        assert(
+          (client.pathTemplates.folderLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('folderLocationInsightTypeInsight', () => {
+      const fakePath = '/rendered/path/folderLocationInsightTypeInsight';
+      const expectedParameters = {
+        folder: 'folderValue',
+        location: 'locationValue',
+        insight_type: 'insightTypeValue',
+        insight: 'insightValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.folderLocationInsightTypeInsightPathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.folderLocationInsightTypeInsightPathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('folderLocationInsightTypeInsightPath', () => {
+        const result = client.folderLocationInsightTypeInsightPath(
+          'folderValue',
+          'locationValue',
+          'insightTypeValue',
+          'insightValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates.folderLocationInsightTypeInsightPathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchFolderFromFolderLocationInsightTypeInsightName', () => {
+        const result = client.matchFolderFromFolderLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'folderValue');
+        assert(
+          (client.pathTemplates.folderLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromFolderLocationInsightTypeInsightName', () => {
+        const result = client.matchLocationFromFolderLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates.folderLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightTypeFromFolderLocationInsightTypeInsightName', () => {
+        const result = client.matchInsightTypeFromFolderLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightTypeValue');
+        assert(
+          (client.pathTemplates.folderLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightFromFolderLocationInsightTypeInsightName', () => {
+        const result = client.matchInsightFromFolderLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightValue');
+        assert(
+          (client.pathTemplates.folderLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('folderLocationRecommender', () => {
+      const fakePath = '/rendered/path/folderLocationRecommender';
+      const expectedParameters = {
+        folder: 'folderValue',
+        location: 'locationValue',
+        recommender: 'recommenderValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.folderLocationRecommenderPathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.folderLocationRecommenderPathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('folderLocationRecommenderPath', () => {
+        const result = client.folderLocationRecommenderPath(
+          'folderValue',
+          'locationValue',
+          'recommenderValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates.folderLocationRecommenderPathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchFolderFromFolderLocationRecommenderName', () => {
+        const result = client.matchFolderFromFolderLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'folderValue');
+        assert(
+          (client.pathTemplates.folderLocationRecommenderPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromFolderLocationRecommenderName', () => {
+        const result = client.matchLocationFromFolderLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates.folderLocationRecommenderPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchRecommenderFromFolderLocationRecommenderName', () => {
+        const result = client.matchRecommenderFromFolderLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommenderValue');
+        assert(
+          (client.pathTemplates.folderLocationRecommenderPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('folderLocationRecommenderRecommendation', () => {
+      const fakePath = '/rendered/path/folderLocationRecommenderRecommendation';
+      const expectedParameters = {
+        folder: 'folderValue',
+        location: 'locationValue',
+        recommender: 'recommenderValue',
+        recommendation: 'recommendationValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.folderLocationRecommenderRecommendationPathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.folderLocationRecommenderRecommendationPathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('folderLocationRecommenderRecommendationPath', () => {
+        const result = client.folderLocationRecommenderRecommendationPath(
+          'folderValue',
+          'locationValue',
+          'recommenderValue',
+          'recommendationValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates
+            .folderLocationRecommenderRecommendationPathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchFolderFromFolderLocationRecommenderRecommendationName', () => {
+        const result = client.matchFolderFromFolderLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'folderValue');
+        assert(
+          (client.pathTemplates
+            .folderLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromFolderLocationRecommenderRecommendationName', () => {
+        const result = client.matchLocationFromFolderLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates
+            .folderLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchRecommenderFromFolderLocationRecommenderRecommendationName', () => {
+        const result = client.matchRecommenderFromFolderLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommenderValue');
+        assert(
+          (client.pathTemplates
+            .folderLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchRecommendationFromFolderLocationRecommenderRecommendationName', () => {
+        const result = client.matchRecommendationFromFolderLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommendationValue');
+        assert(
+          (client.pathTemplates
+            .folderLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('organizationLocationInsightType', () => {
+      const fakePath = '/rendered/path/organizationLocationInsightType';
+      const expectedParameters = {
+        organization: 'organizationValue',
+        location: 'locationValue',
+        insight_type: 'insightTypeValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.organizationLocationInsightTypePathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.organizationLocationInsightTypePathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('organizationLocationInsightTypePath', () => {
+        const result = client.organizationLocationInsightTypePath(
+          'organizationValue',
+          'locationValue',
+          'insightTypeValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates.organizationLocationInsightTypePathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchOrganizationFromOrganizationLocationInsightTypeName', () => {
+        const result = client.matchOrganizationFromOrganizationLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'organizationValue');
+        assert(
+          (client.pathTemplates.organizationLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromOrganizationLocationInsightTypeName', () => {
+        const result = client.matchLocationFromOrganizationLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates.organizationLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightTypeFromOrganizationLocationInsightTypeName', () => {
+        const result = client.matchInsightTypeFromOrganizationLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightTypeValue');
+        assert(
+          (client.pathTemplates.organizationLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('organizationLocationInsightTypeInsight', () => {
+      const fakePath = '/rendered/path/organizationLocationInsightTypeInsight';
+      const expectedParameters = {
+        organization: 'organizationValue',
+        location: 'locationValue',
+        insight_type: 'insightTypeValue',
+        insight: 'insightValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.organizationLocationInsightTypeInsightPathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.organizationLocationInsightTypeInsightPathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('organizationLocationInsightTypeInsightPath', () => {
+        const result = client.organizationLocationInsightTypeInsightPath(
+          'organizationValue',
+          'locationValue',
+          'insightTypeValue',
+          'insightValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates
+            .organizationLocationInsightTypeInsightPathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchOrganizationFromOrganizationLocationInsightTypeInsightName', () => {
+        const result = client.matchOrganizationFromOrganizationLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'organizationValue');
+        assert(
+          (client.pathTemplates
+            .organizationLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromOrganizationLocationInsightTypeInsightName', () => {
+        const result = client.matchLocationFromOrganizationLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates
+            .organizationLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightTypeFromOrganizationLocationInsightTypeInsightName', () => {
+        const result = client.matchInsightTypeFromOrganizationLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightTypeValue');
+        assert(
+          (client.pathTemplates
+            .organizationLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightFromOrganizationLocationInsightTypeInsightName', () => {
+        const result = client.matchInsightFromOrganizationLocationInsightTypeInsightName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightValue');
+        assert(
+          (client.pathTemplates
+            .organizationLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('organizationLocationRecommender', () => {
+      const fakePath = '/rendered/path/organizationLocationRecommender';
+      const expectedParameters = {
+        organization: 'organizationValue',
+        location: 'locationValue',
+        recommender: 'recommenderValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.organizationLocationRecommenderPathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.organizationLocationRecommenderPathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('organizationLocationRecommenderPath', () => {
+        const result = client.organizationLocationRecommenderPath(
+          'organizationValue',
+          'locationValue',
+          'recommenderValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates.organizationLocationRecommenderPathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchOrganizationFromOrganizationLocationRecommenderName', () => {
+        const result = client.matchOrganizationFromOrganizationLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'organizationValue');
+        assert(
+          (client.pathTemplates.organizationLocationRecommenderPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromOrganizationLocationRecommenderName', () => {
+        const result = client.matchLocationFromOrganizationLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates.organizationLocationRecommenderPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchRecommenderFromOrganizationLocationRecommenderName', () => {
+        const result = client.matchRecommenderFromOrganizationLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommenderValue');
+        assert(
+          (client.pathTemplates.organizationLocationRecommenderPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('organizationLocationRecommenderRecommendation', () => {
+      const fakePath =
+        '/rendered/path/organizationLocationRecommenderRecommendation';
+      const expectedParameters = {
+        organization: 'organizationValue',
+        location: 'locationValue',
+        recommender: 'recommenderValue',
+        recommendation: 'recommendationValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.organizationLocationRecommenderRecommendationPathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.organizationLocationRecommenderRecommendationPathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('organizationLocationRecommenderRecommendationPath', () => {
+        const result = client.organizationLocationRecommenderRecommendationPath(
+          'organizationValue',
+          'locationValue',
+          'recommenderValue',
+          'recommendationValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates
+            .organizationLocationRecommenderRecommendationPathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchOrganizationFromOrganizationLocationRecommenderRecommendationName', () => {
+        const result = client.matchOrganizationFromOrganizationLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'organizationValue');
+        assert(
+          (client.pathTemplates
+            .organizationLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromOrganizationLocationRecommenderRecommendationName', () => {
+        const result = client.matchLocationFromOrganizationLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates
+            .organizationLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchRecommenderFromOrganizationLocationRecommenderRecommendationName', () => {
+        const result = client.matchRecommenderFromOrganizationLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommenderValue');
+        assert(
+          (client.pathTemplates
+            .organizationLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchRecommendationFromOrganizationLocationRecommenderRecommendationName', () => {
+        const result = client.matchRecommendationFromOrganizationLocationRecommenderRecommendationName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommendationValue');
+        assert(
+          (client.pathTemplates
+            .organizationLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('projectLocationInsightType', () => {
+      const fakePath = '/rendered/path/projectLocationInsightType';
+      const expectedParameters = {
+        project: 'projectValue',
+        location: 'locationValue',
+        insight_type: 'insightTypeValue',
+      };
+      const client = new recommenderModule.v1.RecommenderClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      client.initialize();
+      client.pathTemplates.projectLocationInsightTypePathTemplate.render = sinon
+        .stub()
+        .returns(fakePath);
+      client.pathTemplates.projectLocationInsightTypePathTemplate.match = sinon
+        .stub()
+        .returns(expectedParameters);
+
+      it('projectLocationInsightTypePath', () => {
+        const result = client.projectLocationInsightTypePath(
+          'projectValue',
+          'locationValue',
+          'insightTypeValue'
+        );
+        assert.strictEqual(result, fakePath);
+        assert(
+          (client.pathTemplates.projectLocationInsightTypePathTemplate
+            .render as SinonStub)
+            .getCall(-1)
+            .calledWith(expectedParameters)
+        );
+      });
+
+      it('matchProjectFromProjectLocationInsightTypeName', () => {
+        const result = client.matchProjectFromProjectLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'projectValue');
+        assert(
+          (client.pathTemplates.projectLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchLocationFromProjectLocationInsightTypeName', () => {
+        const result = client.matchLocationFromProjectLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'locationValue');
+        assert(
+          (client.pathTemplates.projectLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+
+      it('matchInsightTypeFromProjectLocationInsightTypeName', () => {
+        const result = client.matchInsightTypeFromProjectLocationInsightTypeName(
+          fakePath
+        );
+        assert.strictEqual(result, 'insightTypeValue');
+        assert(
+          (client.pathTemplates.projectLocationInsightTypePathTemplate
+            .match as SinonStub)
+            .getCall(-1)
+            .calledWith(fakePath)
+        );
+      });
+    });
+
+    describe('projectLocationInsightTypeInsight', () => {
+      const fakePath = '/rendered/path/projectLocationInsightTypeInsight';
       const expectedParameters = {
         project: 'projectValue',
         location: 'locationValue',
@@ -1503,15 +2583,15 @@ describe('v1.RecommenderClient', () => {
         projectId: 'bogus',
       });
       client.initialize();
-      client.pathTemplates.insightPathTemplate.render = sinon
+      client.pathTemplates.projectLocationInsightTypeInsightPathTemplate.render = sinon
         .stub()
         .returns(fakePath);
-      client.pathTemplates.insightPathTemplate.match = sinon
+      client.pathTemplates.projectLocationInsightTypeInsightPathTemplate.match = sinon
         .stub()
         .returns(expectedParameters);
 
-      it('insightPath', () => {
-        const result = client.insightPath(
+      it('projectLocationInsightTypeInsightPath', () => {
+        const result = client.projectLocationInsightTypeInsightPath(
           'projectValue',
           'locationValue',
           'insightTypeValue',
@@ -1519,119 +2599,143 @@ describe('v1.RecommenderClient', () => {
         );
         assert.strictEqual(result, fakePath);
         assert(
-          (client.pathTemplates.insightPathTemplate.render as SinonStub)
+          (client.pathTemplates.projectLocationInsightTypeInsightPathTemplate
+            .render as SinonStub)
             .getCall(-1)
             .calledWith(expectedParameters)
         );
       });
 
-      it('matchProjectFromInsightName', () => {
-        const result = client.matchProjectFromInsightName(fakePath);
+      it('matchProjectFromProjectLocationInsightTypeInsightName', () => {
+        const result = client.matchProjectFromProjectLocationInsightTypeInsightName(
+          fakePath
+        );
         assert.strictEqual(result, 'projectValue');
         assert(
-          (client.pathTemplates.insightPathTemplate.match as SinonStub)
+          (client.pathTemplates.projectLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
 
-      it('matchLocationFromInsightName', () => {
-        const result = client.matchLocationFromInsightName(fakePath);
+      it('matchLocationFromProjectLocationInsightTypeInsightName', () => {
+        const result = client.matchLocationFromProjectLocationInsightTypeInsightName(
+          fakePath
+        );
         assert.strictEqual(result, 'locationValue');
         assert(
-          (client.pathTemplates.insightPathTemplate.match as SinonStub)
+          (client.pathTemplates.projectLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
 
-      it('matchInsightTypeFromInsightName', () => {
-        const result = client.matchInsightTypeFromInsightName(fakePath);
+      it('matchInsightTypeFromProjectLocationInsightTypeInsightName', () => {
+        const result = client.matchInsightTypeFromProjectLocationInsightTypeInsightName(
+          fakePath
+        );
         assert.strictEqual(result, 'insightTypeValue');
         assert(
-          (client.pathTemplates.insightPathTemplate.match as SinonStub)
+          (client.pathTemplates.projectLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
 
-      it('matchInsightFromInsightName', () => {
-        const result = client.matchInsightFromInsightName(fakePath);
+      it('matchInsightFromProjectLocationInsightTypeInsightName', () => {
+        const result = client.matchInsightFromProjectLocationInsightTypeInsightName(
+          fakePath
+        );
         assert.strictEqual(result, 'insightValue');
         assert(
-          (client.pathTemplates.insightPathTemplate.match as SinonStub)
+          (client.pathTemplates.projectLocationInsightTypeInsightPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
     });
 
-    describe('insightType', () => {
-      const fakePath = '/rendered/path/insightType';
+    describe('projectLocationRecommender', () => {
+      const fakePath = '/rendered/path/projectLocationRecommender';
       const expectedParameters = {
         project: 'projectValue',
         location: 'locationValue',
-        insight_type: 'insightTypeValue',
+        recommender: 'recommenderValue',
       };
       const client = new recommenderModule.v1.RecommenderClient({
         credentials: {client_email: 'bogus', private_key: 'bogus'},
         projectId: 'bogus',
       });
       client.initialize();
-      client.pathTemplates.insightTypePathTemplate.render = sinon
+      client.pathTemplates.projectLocationRecommenderPathTemplate.render = sinon
         .stub()
         .returns(fakePath);
-      client.pathTemplates.insightTypePathTemplate.match = sinon
+      client.pathTemplates.projectLocationRecommenderPathTemplate.match = sinon
         .stub()
         .returns(expectedParameters);
 
-      it('insightTypePath', () => {
-        const result = client.insightTypePath(
+      it('projectLocationRecommenderPath', () => {
+        const result = client.projectLocationRecommenderPath(
           'projectValue',
           'locationValue',
-          'insightTypeValue'
+          'recommenderValue'
         );
         assert.strictEqual(result, fakePath);
         assert(
-          (client.pathTemplates.insightTypePathTemplate.render as SinonStub)
+          (client.pathTemplates.projectLocationRecommenderPathTemplate
+            .render as SinonStub)
             .getCall(-1)
             .calledWith(expectedParameters)
         );
       });
 
-      it('matchProjectFromInsightTypeName', () => {
-        const result = client.matchProjectFromInsightTypeName(fakePath);
+      it('matchProjectFromProjectLocationRecommenderName', () => {
+        const result = client.matchProjectFromProjectLocationRecommenderName(
+          fakePath
+        );
         assert.strictEqual(result, 'projectValue');
         assert(
-          (client.pathTemplates.insightTypePathTemplate.match as SinonStub)
+          (client.pathTemplates.projectLocationRecommenderPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
 
-      it('matchLocationFromInsightTypeName', () => {
-        const result = client.matchLocationFromInsightTypeName(fakePath);
+      it('matchLocationFromProjectLocationRecommenderName', () => {
+        const result = client.matchLocationFromProjectLocationRecommenderName(
+          fakePath
+        );
         assert.strictEqual(result, 'locationValue');
         assert(
-          (client.pathTemplates.insightTypePathTemplate.match as SinonStub)
+          (client.pathTemplates.projectLocationRecommenderPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
 
-      it('matchInsightTypeFromInsightTypeName', () => {
-        const result = client.matchInsightTypeFromInsightTypeName(fakePath);
-        assert.strictEqual(result, 'insightTypeValue');
+      it('matchRecommenderFromProjectLocationRecommenderName', () => {
+        const result = client.matchRecommenderFromProjectLocationRecommenderName(
+          fakePath
+        );
+        assert.strictEqual(result, 'recommenderValue');
         assert(
-          (client.pathTemplates.insightTypePathTemplate.match as SinonStub)
+          (client.pathTemplates.projectLocationRecommenderPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
     });
 
-    describe('recommendation', () => {
-      const fakePath = '/rendered/path/recommendation';
+    describe('projectLocationRecommenderRecommendation', () => {
+      const fakePath =
+        '/rendered/path/projectLocationRecommenderRecommendation';
       const expectedParameters = {
         project: 'projectValue',
         location: 'locationValue',
@@ -1643,15 +2747,15 @@ describe('v1.RecommenderClient', () => {
         projectId: 'bogus',
       });
       client.initialize();
-      client.pathTemplates.recommendationPathTemplate.render = sinon
+      client.pathTemplates.projectLocationRecommenderRecommendationPathTemplate.render = sinon
         .stub()
         .returns(fakePath);
-      client.pathTemplates.recommendationPathTemplate.match = sinon
+      client.pathTemplates.projectLocationRecommenderRecommendationPathTemplate.match = sinon
         .stub()
         .returns(expectedParameters);
 
-      it('recommendationPath', () => {
-        const result = client.recommendationPath(
+      it('projectLocationRecommenderRecommendationPath', () => {
+        const result = client.projectLocationRecommenderRecommendationPath(
           'projectValue',
           'locationValue',
           'recommenderValue',
@@ -1659,113 +2763,65 @@ describe('v1.RecommenderClient', () => {
         );
         assert.strictEqual(result, fakePath);
         assert(
-          (client.pathTemplates.recommendationPathTemplate.render as SinonStub)
+          (client.pathTemplates
+            .projectLocationRecommenderRecommendationPathTemplate
+            .render as SinonStub)
             .getCall(-1)
             .calledWith(expectedParameters)
         );
       });
 
-      it('matchProjectFromRecommendationName', () => {
-        const result = client.matchProjectFromRecommendationName(fakePath);
+      it('matchProjectFromProjectLocationRecommenderRecommendationName', () => {
+        const result = client.matchProjectFromProjectLocationRecommenderRecommendationName(
+          fakePath
+        );
         assert.strictEqual(result, 'projectValue');
         assert(
-          (client.pathTemplates.recommendationPathTemplate.match as SinonStub)
+          (client.pathTemplates
+            .projectLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
 
-      it('matchLocationFromRecommendationName', () => {
-        const result = client.matchLocationFromRecommendationName(fakePath);
+      it('matchLocationFromProjectLocationRecommenderRecommendationName', () => {
+        const result = client.matchLocationFromProjectLocationRecommenderRecommendationName(
+          fakePath
+        );
         assert.strictEqual(result, 'locationValue');
         assert(
-          (client.pathTemplates.recommendationPathTemplate.match as SinonStub)
+          (client.pathTemplates
+            .projectLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
 
-      it('matchRecommenderFromRecommendationName', () => {
-        const result = client.matchRecommenderFromRecommendationName(fakePath);
+      it('matchRecommenderFromProjectLocationRecommenderRecommendationName', () => {
+        const result = client.matchRecommenderFromProjectLocationRecommenderRecommendationName(
+          fakePath
+        );
         assert.strictEqual(result, 'recommenderValue');
         assert(
-          (client.pathTemplates.recommendationPathTemplate.match as SinonStub)
+          (client.pathTemplates
+            .projectLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
       });
 
-      it('matchRecommendationFromRecommendationName', () => {
-        const result = client.matchRecommendationFromRecommendationName(
+      it('matchRecommendationFromProjectLocationRecommenderRecommendationName', () => {
+        const result = client.matchRecommendationFromProjectLocationRecommenderRecommendationName(
           fakePath
         );
         assert.strictEqual(result, 'recommendationValue');
         assert(
-          (client.pathTemplates.recommendationPathTemplate.match as SinonStub)
-            .getCall(-1)
-            .calledWith(fakePath)
-        );
-      });
-    });
-
-    describe('recommender', () => {
-      const fakePath = '/rendered/path/recommender';
-      const expectedParameters = {
-        project: 'projectValue',
-        location: 'locationValue',
-        recommender: 'recommenderValue',
-      };
-      const client = new recommenderModule.v1.RecommenderClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      client.initialize();
-      client.pathTemplates.recommenderPathTemplate.render = sinon
-        .stub()
-        .returns(fakePath);
-      client.pathTemplates.recommenderPathTemplate.match = sinon
-        .stub()
-        .returns(expectedParameters);
-
-      it('recommenderPath', () => {
-        const result = client.recommenderPath(
-          'projectValue',
-          'locationValue',
-          'recommenderValue'
-        );
-        assert.strictEqual(result, fakePath);
-        assert(
-          (client.pathTemplates.recommenderPathTemplate.render as SinonStub)
-            .getCall(-1)
-            .calledWith(expectedParameters)
-        );
-      });
-
-      it('matchProjectFromRecommenderName', () => {
-        const result = client.matchProjectFromRecommenderName(fakePath);
-        assert.strictEqual(result, 'projectValue');
-        assert(
-          (client.pathTemplates.recommenderPathTemplate.match as SinonStub)
-            .getCall(-1)
-            .calledWith(fakePath)
-        );
-      });
-
-      it('matchLocationFromRecommenderName', () => {
-        const result = client.matchLocationFromRecommenderName(fakePath);
-        assert.strictEqual(result, 'locationValue');
-        assert(
-          (client.pathTemplates.recommenderPathTemplate.match as SinonStub)
-            .getCall(-1)
-            .calledWith(fakePath)
-        );
-      });
-
-      it('matchRecommenderFromRecommenderName', () => {
-        const result = client.matchRecommenderFromRecommenderName(fakePath);
-        assert.strictEqual(result, 'recommenderValue');
-        assert(
-          (client.pathTemplates.recommenderPathTemplate.match as SinonStub)
+          (client.pathTemplates
+            .projectLocationRecommenderRecommendationPathTemplate
+            .match as SinonStub)
             .getCall(-1)
             .calledWith(fakePath)
         );
