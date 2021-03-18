@@ -1,14 +1,15 @@
 {
-  "name": "recommender",
-  "name_pretty": "Recommender",
-  "product_documentation": "https://cloud.google.com/recommender/docs",
-  "client_documentation": "https://googleapis.dev/nodejs/recommender/latest/index.html",
-  "issue_tracker": "",
+  "default_version": "v1",
   "release_level": "ga",
-  "language": "nodejs",
-  "repo": "googleapis/nodejs-recommender",
-  "distribution_name": "@google-cloud/recommender",
-  "api_id": "recommender.googleapis.com",
   "requires_billing": true,
-  "codeowner_team": "@googleapis/ml-apis"
+  "client_documentation": "https://googleapis.dev/nodejs/recommender/latest/index.html",
+  "codeowner_team": "@googleapis/ml-apis",
+  "language": "nodejs",
+  "issue_tracker": "",
+  "product_documentation": "https://cloud.google.com/recommender/docs",
+  "name": "recommender",
+  "distribution_name": "@google-cloud/recommender",
+  "name_pretty": "Recommender",
+  "api_id": "recommender.googleapis.com",
+  "repo": "googleapis/nodejs-recommender"
 }
