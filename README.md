@@ -6,7 +6,6 @@
 
 
 [![npm version](https://img.shields.io/npm/v/@google-cloud/recommender.svg)](https://www.npmjs.org/package/@google-cloud/recommender)
-[![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-recommender/main.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-recommender)
 
 
 
