@@ -83,6 +83,9 @@ const recommendations = await listRecommendations();
 
 
 
+
+This library is built on top of google-gax as its transport layer. To customize the common behavior of this client library (timeout, retry, etc), see [Client Library Howto](https://github.com/googleapis/gax-nodejs/blob/main/client-libraries.md).
+
 ## Samples
 
 Samples are in the [`samples/`](https://github.com/googleapis/nodejs-recommender/tree/main/samples) directory. Each sample's `README.md` has instructions for running its sample.
