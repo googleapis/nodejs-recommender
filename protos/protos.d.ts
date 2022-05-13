@@ -1494,56 +1494,56 @@ export namespace google {
                 namespace Recommender {
 
                     /**
-                     * Callback as used by {@link google.cloud.recommender.v1.Recommender#listInsights}.
+                     * Callback as used by {@link google.cloud.recommender.v1.Recommender|listInsights}.
                      * @param error Error, if any
                      * @param [response] ListInsightsResponse
                      */
                     type ListInsightsCallback = (error: (Error|null), response?: google.cloud.recommender.v1.ListInsightsResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.recommender.v1.Recommender#getInsight}.
+                     * Callback as used by {@link google.cloud.recommender.v1.Recommender|getInsight}.
                      * @param error Error, if any
                      * @param [response] Insight
                      */
                     type GetInsightCallback = (error: (Error|null), response?: google.cloud.recommender.v1.Insight) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.recommender.v1.Recommender#markInsightAccepted}.
+                     * Callback as used by {@link google.cloud.recommender.v1.Recommender|markInsightAccepted}.
                      * @param error Error, if any
                      * @param [response] Insight
                      */
                     type MarkInsightAcceptedCallback = (error: (Error|null), response?: google.cloud.recommender.v1.Insight) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.recommender.v1.Recommender#listRecommendations}.
+                     * Callback as used by {@link google.cloud.recommender.v1.Recommender|listRecommendations}.
                      * @param error Error, if any
                      * @param [response] ListRecommendationsResponse
                      */
                     type ListRecommendationsCallback = (error: (Error|null), response?: google.cloud.recommender.v1.ListRecommendationsResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.recommender.v1.Recommender#getRecommendation}.
+                     * Callback as used by {@link google.cloud.recommender.v1.Recommender|getRecommendation}.
                      * @param error Error, if any
                      * @param [response] Recommendation
                      */
                     type GetRecommendationCallback = (error: (Error|null), response?: google.cloud.recommender.v1.Recommendation) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.recommender.v1.Recommender#markRecommendationClaimed}.
+                     * Callback as used by {@link google.cloud.recommender.v1.Recommender|markRecommendationClaimed}.
                      * @param error Error, if any
                      * @param [response] Recommendation
                      */
                     type MarkRecommendationClaimedCallback = (error: (Error|null), response?: google.cloud.recommender.v1.Recommendation) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.recommender.v1.Recommender#markRecommendationSucceeded}.
+                     * Callback as used by {@link google.cloud.recommender.v1.Recommender|markRecommendationSucceeded}.
                      * @param error Error, if any
                      * @param [response] Recommendation
                      */
                     type MarkRecommendationSucceededCallback = (error: (Error|null), response?: google.cloud.recommender.v1.Recommendation) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.recommender.v1.Recommender#markRecommendationFailed}.
+                     * Callback as used by {@link google.cloud.recommender.v1.Recommender|markRecommendationFailed}.
                      * @param error Error, if any
                      * @param [response] Recommendation
                      */
@@ -4996,6 +4996,9 @@ export namespace google {
             /** FieldOptions lazy */
             lazy?: (boolean|null);
 
+            /** FieldOptions unverifiedLazy */
+            unverifiedLazy?: (boolean|null);
+
             /** FieldOptions deprecated */
             deprecated?: (boolean|null);
 
@@ -5032,6 +5035,9 @@ export namespace google {
 
             /** FieldOptions lazy. */
             public lazy: boolean;
+
+            /** FieldOptions unverifiedLazy. */
+            public unverifiedLazy: boolean;
 
             /** FieldOptions deprecated. */
             public deprecated: boolean;
